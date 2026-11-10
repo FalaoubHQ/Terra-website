@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Architecture Studio — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <ul class="pills">
+    <li><a class="pill active" href="#home">Home</a></li>
+    <li><a class="pill" href="#about">About us</a></li>
+    <li><a class="pill" href="#projects">Projects</a></li>
+    <li><a class="pill" href="#services">Services</a></li>
+    <li><a class="pill" href="#showroom">Showroom</a></li>
+  </ul>
+
+  <a class="logo" href="#home" aria-label="Home">
+    <!-- Put your logo at images/logo.png -->
+    <img src="images/logo.png" alt="Studio logo" onerror="this.parentElement.classList.add('no-img')">
+    <span class="fallback">YOUR LOGO</span>
+  </a>
+
+  <div class="actions">
+    <a class="link-u" href="#contact">Contact</a>
+    <a class="nav-cta link-u" href="#order"><span>Order a project</span>
+      <svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 6h32M27 1l5 5-5 5"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer" aria-label="Mobile menu">
+  <a href="#home">Home</a><a href="#about">About us</a><a href="#projects">Projects</a>
+  <a href="#services">Services</a><a href="#showroom">Showroom</a><a href="#contact">Contact</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <!-- LAYERS (back to front): hero-bg.jpg photo → big title → hero-house.png house → "cotta" + info card -->
+  <div class="stage">
+    <div class="layer bg" data-depth="8">
+      <img src="images/hero-bg.jpg" alt="Modern house in the landscape" onerror="this.remove()">
+    </div>
+  </div>
+
+  <div class="eyebrow">
+    <span>Studio name</span>
+    <span class="c">2025<br>Architecture with meaning</span>
+    <ul><li>Compact</li><li>Secure</li><li>Minimal</li></ul>
+  </div>
+
+  <div class="title" data-depth="-14" aria-hidden="true">
+    <span class="word"><span>T</span><span>E</span><span>R</span><span>R</span><span>A</span></span>
+  </div>
+  <h1 class="script" aria-label="Terra cotta">cotta</h1>
+
+  <!-- HOUSE LAYER (in front of the big title).
+       Best: images/hero-house.png = transparent cut-out of the house, same size as the photo.
+       If that file is missing, the same photo is reused and automatically masked to the house shape. -->
+  <div class="stage stage-fg">
+    <div class="layer fg" data-depth="8">
+      <img src="images/hero-house.png" alt="" onerror="this.onerror=null;this.src='images/hero-bg.jpg';this.closest('.layer').classList.add('clipped')">
+    </div>
+  </div>
+  <div class="shade"></div>
+
+  <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+
+  <dl class="card">
+    <div><dt>Studio: </dt><dd>Studio name</dd></div>
+    <div><dt>Architects: </dt><dd>Name Surname, Name Surname</dd></div>
+    <div><dt>Location: </dt><dd>City, Country</dd></div>
+    <div><dt>Area: </dt><dd>173 m²</dd></div>
+    <div><dt>Year: </dt><dd>2022</dd></div>
+    <div><dt>Category: </dt><dd>Private houses</dd></div>
+  </dl>
+
+  <div class="bottom">
+    <div class="social">
+      <a href="#" aria-label="Behance">Bē</a>
+      <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l5 2 2 6 3-4 5 4z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a>
+    </div>
+    <div class="copy">
+      <p>Modern minimalism in a mountain landscape: a compact house on stilts, sheltered from the wind by deep overhangs, opening onto panoramic views of the wild terrain.</p>
+      <p>A flexible interior with sliding doors and a hidden entrance sets up a dialogue between avant-garde architecture and a harsh climate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="frame reveal" id="frame">
+
+    <div class="frame-left">
+      <div class="avatars" aria-hidden="true"><i class="av a1"></i><i class="av a2"></i></div>
+      <h2>Design Your<br>Ideal Home</h2>
+      <p class="hello">Let's get acquainted!</p>
+
+      <div class="intro">
+        <p>We specialize in designing exceptional private homes, with an unparalleled level of comfort, privacy and convenience for the way you want to live.</p>
+        <a class="btn-dark" href="#projects">More
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <ul class="stats">
+        <li><b><span data-count="115">0</span>+</b><small>Projects built</small></li>
+        <li><b><span data-count="70">0</span>+</b><small>Happy clients</small></li>
+        <li><b><span data-count="47">0</span>+</b><small>Awards won</small></li>
+      </ul>
+
+      <div class="mini" id="mini">
+        <div class="mini-img" id="miniImg"></div>
+        <span class="chip chip-loc" id="miniLoc">City, Country</span>
+        <span class="chip chip-pop">Popular <em>★★★★★</em></span>
+        <div class="mini-nav">
+          <button type="button" id="prev" aria-label="Previous project"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"/></svg></button>
+          <button type="button" id="next" aria-label="Next project"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2v8M2.5 6.5 6 10l3.5-3.5"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame-right">
+      <div class="photo"></div>
+      <div class="photo-shade"></div>
+
+      <div class="loc-card">
+        <div><span>Location</span><strong>City, Country</strong>
+          <a href="#projects" class="go" aria-label="View project"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 10 10 2M4 2h6v6"/></svg></a></div>
+        <i class="thumb"></i>
+      </div>
+
+      <div class="top-right">
+        <a class="pill-white" href="#contact">Contact us</a>
+        <a class="round-white" href="#contact" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-5 7-5s6 1 7 5"/></svg></a>
+      </div>
+
+      <div class="frame-bottom">
+        <p>A calm, sheltered home with deep overhangs and panoramic glazing, built to sit quietly in its landscape and stay comfortable in every season.</p>
+        <form class="filters" onsubmit="return false">
+          <label><span class="sr">Type</span>
+            <select><option>Select type</option><option>Private houses</option><option>Villas</option><option>Interiors</option></select></label>
+          <label><span class="sr">Location</span>
+            <select><option>Location</option><option>City 1</option><option>City 2</option><option>City 3</option></select></label>
+          <a class="btn-line" href="#projects">Explore</a>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="sec-head reveal">
+    <p class="kicker"><i></i>Projects</p>
+    <h2>Selected works,<br>shown in motion</h2>
+    <p class="sub">Nine short films that explain how we design and build, and eight projects to explore. Hover a film to preview it, click to watch it full screen.</p>
+  </div>
+
+  <div class="panel reveal">
+    <article class="feat" id="feat">
+      <video id="featVideo" muted loop playsinline preload="metadata"></video>
+      <div class="feat-shade"></div>
+      <div class="notch" role="tablist" aria-label="Featured films">
+        <button class="on" data-i="0" role="tab">Film 01</button>
+        <button data-i="1" role="tab">Film 02</button>
+        <button data-i="2" role="tab">Film 03</button>
+      </div>
+      <div class="feat-copy">
+        <h3 id="featTitle">Homes that listen<br>to their landscape.</h3>
+        <button class="btn-white" id="featPlay" type="button">View video
+          <svg viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg></button>
+      </div>
+      <div class="now">
+        <div><small>Now showing</small><b id="featLoc">City, Country</b></div>
+        <button class="now-next" id="featNext" type="button" aria-label="Next film">
+          <svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m1.5 1 5 5-5 5"/></svg></button>
+      </div>
+    </article>
+
+    <div class="row">
+      <article class="bt bt-a">
+        <div class="bt-img"></div>
+        <div class="bt-txt">
+          <small>Our approach</small>
+          <h4>Every home begins with <b>the landscape</b></h4>
+          <a class="go" href="#services" aria-label="Our services"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+        </div>
+      </article>
+      <article class="bt bt-b">
+        <a class="go" href="#reels" aria-label="Go to the films"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+        <b class="big-n">9</b>
+        <p>Explainer films: short vertical videos that walk you through how we design and build.</p>
+        <div class="bt-strip"></div>
+      </article>
+      <article class="bt bt-c">
+        <i class="hot h1"></i><i class="hot h2"></i>
+        <a class="btn-white sm" href="#reels">Watch</a>
+      </article>
+    </div>
+  </div>
+
+  <div class="reels reveal" id="reels">
+    <div class="reels-head">
+      <div><p class="kicker"><i></i>Explained</p><h3>Nine films,<br>one idea each</h3></div>
+      <div class="reels-nav">
+        <button type="button" id="reelPrev" aria-label="Previous films"><svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1l-5 5 5 5"/></svg></button>
+        <button type="button" id="reelNext" aria-label="Next films"><svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m1.5 1 5 5-5 5"/></svg></button>
+      </div>
+    </div>
+    <div class="reels-track" id="reelsTrack" tabindex="0" aria-label="Explainer films"></div>
+    <div class="reels-progress" aria-hidden="true"><i id="reelsBar"></i></div>
+  </div>
+
+  <div class="cf reveal" id="cf">
+    <div class="cf-head">
+      <h3>8 projects,<br>one philosophy</h3>
+      <p>Drag, swipe or use the arrow keys to browse. Press &ldquo;Expand&rdquo; to see a project&rsquo;s photo full screen.</p>
+    </div>
+    <div class="cf-floor"></div>
+    <div class="cf-stage" id="cfStage" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Projects"></div>
+    <div class="cf-bar">
+      <button type="button" id="cfPrev" aria-label="Previous project"><svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1l-5 5 5 5"/></svg></button>
+      <div class="cf-now"><i id="cfThumb"></i><div><b id="cfName">Project</b><small id="cfCat">Category</small></div></div>
+      <button type="button" class="cf-heart" id="cfHeart" aria-label="Save project" aria-pressed="false"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+      <button type="button" id="cfNext" aria-label="Next project"><svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m1.5 1 5 5-5 5"/></svg></button>
+    </div>
+    <div class="cf-dots" id="cfDots"></div>
+  </div>
+
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Media viewer" hidden>
+    <button class="lb-x" id="lbX" aria-label="Close">&times;</button>
+    <button class="lb-a lb-p" id="lbP" aria-label="Previous"><svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1l-5 5 5 5"/></svg></button>
+    <div class="lb-stage" id="lbStage"></div>
+    <button class="lb-a lb-n" id="lbN" aria-label="Next"><svg viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m1.5 1 5 5-5 5"/></svg></button>
+    <p class="lb-cap" id="lbCap"></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-panel reveal">
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track" id="mqTrack"><span>Compact</span><span>Secure</span><span>Minimal</span><span>Meaningful</span><span>Timeless</span></div>
+    </div>
+    <div class="cta-body" id="order">
+      <div>
+        <p class="kicker dark"><i></i>Let&rsquo;s talk</p>
+        <h2>Ready to build a home <em>with meaning?</em></h2>
+      </div>
+      <a class="cta-btn" id="ctaBtn" href="mailto:hello@yourstudio.com"><span>Order a project</span>
+        <svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 6h32M27 1l5 5-5 5"/></svg></a>
+    </div>
+    <ul class="cta-info">
+      <li><small>Email</small><a href="mailto:hello@yourstudio.com">hello@yourstudio.com</a></li>
+      <li><small>Phone</small><a href="tel:+000000000000">+000 000 000 000</a></li>
+      <li><small>Showroom</small><span>Street name, City, Country</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
